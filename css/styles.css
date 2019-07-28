@@ -1,0 +1,292 @@
+:root {
+    --heading-color: #030303;
+    --secondary-color: #595E4B;
+    --bg-color: #fff;
+    --active-color: #000;
+    --btn-color: #fff;
+    --nav-heading: rgba(0,0,0,.9);
+    --nav-link: #343a40;
+}
+[data-theme="dark"] {
+    --heading-color: #fff;
+    --secondary-color: #8d8e8c;
+    --bg-color: #161625;
+    --active-color: #fff;
+    --btn-color: #fff;
+    --nav-heading: #fff;
+    --nav-link: #fff;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    transition: all .6s;
+}
+
+.navbar {
+    min-height: 80px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.bg-light {
+    background-color: #ffffff00 !important;
+}
+
+.navbar-brand {
+    height: 80px;
+    line-height: 80px;
+    color: var(--nav-heading) !important;
+    letter-spacing: 4px;
+}
+.nav-link {
+    color: var(--nav-link) !important;
+}
+.navbar-toggler-icon {
+    background-image: url("../img/menu.svg") !important;
+    width: 3em;
+    height: 2em;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: 0;
+}
+
+.active-home {
+    border-bottom: 2px solid var(--active-color);
+}
+
+.nav-btn {
+    color: var(--btn-color);
+    width: 72px;
+    border-radius: 38px;
+}
+.btn:focus {
+    box-shadow: none;
+}
+h1 {
+    color: var(--heading-color);
+    letter-spacing: 0.56px;
+    line-height: 63px;
+    font-family: 'Abril Fatface', cursive;
+}
+p {
+    font-size: 14px;
+    letter-spacing: 0.28px;
+    color: var(--secondary-color);
+    opacity: .5;
+}
+
+.main-col-1 {
+    padding: 10px 25px;
+}
+.btn-landing {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    height: 40px;
+    width: 50px;
+    border-radius: 38px;
+    position: absolute;
+    left: 206px;
+}
+.btn-landing:focus {
+    outline: none;
+    border-color: none;
+}
+.btn-outline-success {
+    border-color: #7161e5 !important;
+}
+.btn-outline-success:focus {
+    box-shadow: none;
+}
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+    p {
+        letter-spacing: .01em;
+        -webkit-font-smoothing: antialiased;
+        font-feature-settings: 'calt' 0;
+        line-height: 38px;
+    }
+    .input-landing {
+        width: 91%;
+    }
+    .btn-landing {
+        margin-left: auto;
+        left: 214px;
+    bottom: 7px;
+    }
+    .svg-col {
+        display: none;
+    }
+}
+
+.navbar-light .navbar-toggler {
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: 0;
+}
+
+a:hover {
+    color: #0019e6b3;
+    text-decoration: none;
+}
+.blob-right {
+    width: 150px;
+    height: 150px;
+    right: 265px;
+    top: 151px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -3;
+    opacity: .7;
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+.blob-right-sm {
+    width: 50px;
+    height: 50px;
+    right: 200px;
+    top: 151px;
+    position: absolute;
+    /* background-image: linear-gradient(orange, red); */
+    /* border-radius: 0 0 60px 240px; */
+    border-radius: 50%;
+    z-index: -3;
+    opacity: .7;
+    background-image: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
+}
+.blob-left {
+    width: 90px;
+    height: 90px;
+    left: 6em;
+    top: 112px;
+    position: absolute;
+    background-image: linear-gradient(orange, red);
+    z-index: -3;
+    opacity: .8;
+    border-radius: 50%;
+}
+@media only screen and (max-width: 600px) {
+    .blob-right {
+        top: 6px;
+        border-radius: 0 0 60px 100em;
+    }
+    .blob-left {
+        width: 183px;
+        height: 273px;
+        left: -106px;
+        top: 330px;
+    }
+}
+.form-control {
+    background-color: #8080;
+}
+
+.form-control:focus {
+    border-color: #808080 !important;
+    box-shadow: none;
+}
+
+.footer-img {
+    width: 60%;
+    margin-top: 50px;
+}
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.floating-x {  
+    animation-name: floatingx;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+@keyframes floatingx {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }   
+}
+@keyframes floating-x {
+    from {
+        transform: translate(0px, 0);
+    }
+    65% {
+        transform: translate(15px, 0);
+    }
+    100% {
+        transform: translate(-0px, 0);
+    }
+}
+
+/* styles for toggle switch */
+/* learning Source: https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8 */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+  
+.theme-switch input {
+    display:none;
+}
+  
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+  
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+  
+input:checked + .slider {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+
+}
+  
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+  
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+  
+  

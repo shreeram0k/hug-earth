@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hug Earth</title>
+
+    <!-- Boootstrap CSS files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                Hug Earth
+            </a>
+            <button class="navbar-toggler nav-btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item pr-5">
+                        <a class="nav-link text-dark active-home" href="#">Home</a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link text-dark" href="#categories">Planets</a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link text-dark" href="#">About</a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link text-dark" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item pr-5">
+                        <a class="nav-link text-dark" href="#">Faqs</a>
+                    </li>
+                    <li>
+                        <div class="theme-switch-wrapper">
+                            <label class="theme-switch" for="checkbox">
+                                <input type="checkbox" id="checkbox" />
+                                <div class="slider round"></div>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="blob-left floating-x"></div>
+        <div class="blob-right floating"></div>
+        <div class="blob-right-sm floating-x"></div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-7 col-sm-12 svg-col">
+                <!--Source: https://welovetheearth.org/video/ -->
+                <img src="img/earth-hug.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col-lg-5 col-md-6 col-12 col-sm-12 align-self-center main-col-1">
+                <h1 class="display-4">Life is Beautiful</h1>
+                <!-- Source: https://www.familyfriendpoems.com/poems/nature/earth/ -->
+                <p>When you see the green mountains,
+                    And feel the lush valleys,
+                    Know that they're all yours.
+                    Cherish them; the more you will,</p>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2 input-landing" type="search" placeholder="Input green"
+                        aria-label="Email" style="color: #444444; height: 50px; overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap; border-radius: 38px;">
+                    <button class="btn btn-outline-success my-2 my-sm-0 btn-landing" type="submit">Go</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- event handlers for Dark and Light theme switching -->
+    <script>
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+
+    <!-- Storing the use preferences for future visits -->
+    <script>
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark'); //add this
+            }
+            else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light'); //add this
+            }
+        }
+
+    </script>
+    <!-- Check for saved user preference, if any, on load of the website -->
+    <script>
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
